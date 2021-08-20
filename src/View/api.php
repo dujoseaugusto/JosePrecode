@@ -12,8 +12,24 @@
 
       </div>
       <div class="card p-3 m-3">
+        <label for="#texto">Adiciona Produto no Carrinho</label><br />
+        Endpoint: <?=URL_SITE?>api/adiciona_carrinho<br />
+        Type: POST <br />
+        JSON: {
+                "id_produto":"00",
+                "qtd":"0"
+              }
+
+      </div>
+      <div class="card p-3 m-3">
         <label for="#texto">Remove Produto</label><br />
         Endpoint: <?=URL_SITE?>apiremove_produto/{id}<br />
+        Type: DELETE <br />
+
+      </div>
+      <div class="card p-3 m-3">
+        <label for="#texto">Remove Produto do carrinho</label><br />
+        Endpoint: <?=URL_SITE?>remove_produto_carrinho/{id_produto}<br />
         Type: DELETE <br />
 
       </div>
@@ -32,6 +48,13 @@
       <div class="card p-3 m-3">
         <label for="#texto">Lista Produtos</label><br />
         Endpoint: <?=URL_SITE?>api/lista_produtos <br />
+        Type: GET <br />
+
+
+      </div>
+      <div class="card p-3 m-3">
+        <label for="#texto">Lista carrinho</label><br />
+        Endpoint: <?=URL_SITE?>api/lista_carrinho <br />
         Type: GET <br />
 
 

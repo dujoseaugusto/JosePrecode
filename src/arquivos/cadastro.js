@@ -25,7 +25,7 @@ function lista_produtos(){
                                         <i class='far fa-edit'></i>
                                     </button>                                    
                                     <img src="${value.imagem}" style="width:30px" />
-                                    ${value.nome} <small>${value.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</small>"
+                                    ${value.nome} <small>${value.valor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</small>
                                     </li>`);
 
         });

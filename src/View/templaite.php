@@ -13,13 +13,29 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="<?=URL_SITE?>" tabindex="-1" >Produtos</a>
+          <button type="btn" class="btn-outline-primary btn-sm">
+            <a class="nav-link" href="<?=URL_SITE?>/catalogo" tabindex="-1" >Catálogo de produto</a>
+          </button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=URL_SITE?>cadastro" tabindex="-1" >Cadastro</a>
+          <button type="btn" class="btn-outline-primary btn-sm">
+            <a class="nav-link" href="<?=URL_SITE?>/carrinho" tabindex="-1" >Carrinho</a>
+          </button>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?=URL_SITE?>api" tabindex="-1" >Api</a>
+          <button type="btn" class="btn-outline-primary btn-sm">
+            <a class="nav-link" href="<?=URL_SITE?>/produto" tabindex="-1" > Editar Produtos</a>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button type="btn" class="btn-outline-primary btn-sm">
+            <a class="nav-link" href="<?=URL_SITE?>cadastro" tabindex="-1" >Cadastro</a>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button type="btn" class="btn-outline-primary btn-sm">
+            <a class="nav-link" href="<?=URL_SITE?>api" tabindex="-1" >Doc Api</a>
+          </button>
         </li>
       </ul>
       <form class="d-flex" action="<?=URL_SITE?>" method="GET">

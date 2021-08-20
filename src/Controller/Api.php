@@ -6,6 +6,7 @@ use Exception;
 use Models\Conect;
 use Models\Request_m;
 use PDO;
+use Service\Carrinhos;
 use Service\Produtos;
 
 class Api extends Request_m{
@@ -100,6 +101,55 @@ class Api extends Request_m{
       }
     }
 
+    public function listaCarrinho(){
+        try{  
+            $this->retorno['data'] = Carrinhos::carregaCarrinho($this->conexao);
+        } catch (\Throwable $e) {
+            $this->retorno = ['message'=>$e->getMessage()];
+            $this->codigoRetorno = 400;
+        }finally{
+            $this->resposta->setData($this->retorno)->setStatusCode($this->codigoRetorno)->send();
+            die;
+        }
+      }
+    
+    public function addCarrinho(){
+        $this->conexao->beginTransaction();
+        try{
+            $this->dados = json_decode($this->json,true);
+            $carrrinho = new Carrinhos;
+            $carrrinho->id_produto = $this->dados['id_produto'];
+            $carrrinho->valor = $carrrinho->getProduto()['valor'];
+            $carrrinho->qtd = $this->dados['qtd'];
+            $carrrinho->addProdutoCarrinho($this->conexao);
+            $this->conexao->commit();
+            // $this->retorno['data'] = ["id"=>$produto->id];
+        } catch (\Throwable $e) {
+            $this->conexao->rollBack();
+            $this->retorno = ['message'=>$e->getMessage()];
+            $this->codigoRetorno = 400;
+        }finally{
+            $this->resposta->setData($this->retorno)->setStatusCode($this->codigoRetorno)->send();
+            die;
+        }
+    }
 
+    public function removeProdutoCarrinho($data){
+        $this->conexao->beginTransaction();
+        try{
+            $carrinho = new Carrinhos;
+            $carrinho->id_produto = intval($data['id_produto']);
+            $carrinho->removeProdutoCarrinho($this->conexao);
+  
+            $this->conexao->commit();
+        } catch (\Throwable $e) {
+            $this->conexao->rollBack();
+            $this->retorno = ['message'=>$e->getMessage()];
+            $this->codigoRetorno = 400;
+        }finally{
+            $this->resposta->setData($this->retorno)->setStatusCode($this->codigoRetorno)->send();
+            die;
+        }
+      }
 }
 ?>
