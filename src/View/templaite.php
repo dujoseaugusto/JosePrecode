@@ -1,3 +1,11 @@
+<?php
+
+use Models\Conect;
+
+if(!Conect::abreConexao()){ 
+  die;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

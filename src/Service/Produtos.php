@@ -51,6 +51,7 @@ class Produtos extends Produto
     if($dados =  $exec->fetch(PDO::FETCH_ASSOC)){
       $this->id = $dados['id'];
       $this->nome = $dados['nome'];
+      $this->imagem = $dados['imagem'];
       $this->valor = floatval($dados['valor']);
     }
   }

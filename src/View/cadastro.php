@@ -16,7 +16,6 @@
           </div>
           <div class='col-5 mt-4'>
             <label for="nome">imagem</label>
-            <img id="imagemProduto" src="<?=$produto->imagem?>" style="width:50px" />
             <input type="hidden" id="imagem" value="<?=$produto->imagem?>">
             <input type="file" onchange="encodeImageFileAsURL(this)" /> 
           </div>
