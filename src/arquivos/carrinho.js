@@ -42,38 +42,3 @@ $(document).on('click','.remove_produto_carrinho', function(){
       lista_carrinho();
   });
 });
-
-//  function novo(){
-//   $("#nome").val('');
-//   $("#valor").val('');
-//   $("#imagem").val('');
-//   $("#cod_produto").val('');
-// }
-
-// $(document).on('click','#salvar', function(){
-//   var produto = new Object();
-//   var metodo = 'POST';
-//   var url = url_site+"api/cadastro_produto";
-//   produto.nome = $("#nome").val();
-//   produto.valor = $("#valor").val();
-//   produto.imagem = $("#imagem").val();
-//   if($("#cod_produto").val() >= 1){
-//     produto.id = $("#cod_produto").val();
-//     metodo = 'PUT';
-//     url = url_site+"api/altera_produtos";
-//   }
-//   $.ajax({
-//       url: url,
-//       method : metodo,
-//       contentType : 'application/json',
-//       dataType : 'json',
-//       data : JSON.stringify(produto),
-//       error: function() {
-//           $.alert('Erro para atualizar produto');
-//       }
-//   }).done(function(data) {
-//       $("#cod_produto").val(data.data.id)
-//       $.alert("Sucesso!!");
-//   });
-
-// });
